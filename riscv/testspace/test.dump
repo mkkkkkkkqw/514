@@ -1,0 +1,64 @@
+/tmp/rv32i-online/dist/test.om:     file format elf32-littleriscv
+
+
+Disassembly of section .rom:
+
+00000000 <.rom>:
+   0:	00020137          	lui	sp,0x20
+   4:	7fd000ef          	jal	1000 <main>
+   8:	0ff00513          	li	a0,255
+   c:	000306b7          	lui	a3,0x30
+  10:	00a68223          	sb	a0,4(a3) # 30004 <__heap_start+0x2e004>
+  14:	ff9ff06f          	j	c <main-0xff4>
+
+Disassembly of section .text.startup:
+
+00001000 <main>:
+    1000:	000017b7          	lui	a5,0x1
+    1004:	02878793          	add	a5,a5,40 # 1028 <main+0x28>
+    1008:	04800713          	li	a4,72
+    100c:	000306b7          	lui	a3,0x30
+    1010:	00e68023          	sb	a4,0(a3) # 30000 <__heap_start+0x2e000>
+    1014:	0017c703          	lbu	a4,1(a5)
+    1018:	00178793          	add	a5,a5,1
+    101c:	fe071ae3          	bnez	a4,1010 <main+0x10>
+    1020:	00000513          	li	a0,0
+    1024:	00008067          	ret
+
+Disassembly of section .rodata.str1.4:
+
+00001028 <__bss_end-0xe>:
+    1028:	6548                	.insn	2, 0x6548
+    102a:	6c6c                	.insn	2, 0x6c6c
+    102c:	6f57206f          	j	73f20 <__heap_start+0x71f20>
+    1030:	6c72                	.insn	2, 0x6c72
+    1032:	2164                	.insn	2, 0x2164
+    1034:	000a                	.insn	2, 0x000a
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1b41                	.insn	2, 0x1b41
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <main-0xfec>
+   c:	0011                	.insn	2, 0x0011
+   e:	0000                	.insn	2, 0x
+  10:	1004                	.insn	2, 0x1004
+  12:	7205                	.insn	2, 0x7205
+  14:	3376                	.insn	2, 0x3376
+  16:	6932                	.insn	2, 0x6932
+  18:	7032                	.insn	2, 0x7032
+  1a:	0031                	.insn	2, 0x0031
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347          	.insn	4, 0x3a434347
+   4:	2820                	.insn	2, 0x2820
+   6:	2029                	.insn	2, 0x2029
+   8:	3331                	.insn	2, 0x3331
+   a:	322e                	.insn	2, 0x322e
+   c:	302e                	.insn	2, 0x302e
+	...
